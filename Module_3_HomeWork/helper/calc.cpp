@@ -3,7 +3,7 @@
 #include <list>
 #include <iterator>
 
-#include "math.h"
+#include "helper/math.h"
 
 class OpData {
 public:
@@ -156,8 +156,8 @@ int checkExprString(const std::string& str) {
 			dotFlag = false;
 
 		if (str[i] == '|') {
-			int nextElPriority = -1;
-			if (i == 0 || (((nextElPriority = priority(str[i - 1])) != 0) && nextElPriority != 4 && nextElPriority != 5) || (str[i - 1] == '(' || (modFlag && str[i - 1] == '|'))) {
+			int prevElPriority = -1;
+			if (i == 0 || (((prevElPriority = priority(str[i - 1])) != 0) && prevElPriority != 4 && prevElPriority != 5) || (str[i - 1] == '(' || (modFlag && str[i - 1] == '|'))) {
 				if (i != itOnLastElement && (priority(str[i + 1]) == 0 || priority(str[i + 1]) == 1 || str[i + 1] == '(' || str[i + 1] == '|')) {
 					modFlag = true;
 					bktCountOnModTrue.push_front(bktCount);
@@ -402,7 +402,7 @@ double calculate(const std::string& str, int* errorCode) {
 	return res;
 }
 
-const std::string printCalcErrorText(int code) {
+const std::string getCalcErrorText(int code) {
 	switch (code)
 	{
 	case 1:

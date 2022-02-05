@@ -49,7 +49,7 @@ int main() {
 		if (!errCode)
 			std::cout << "Result: " << str << " = " << result << "\n";
 		else {
-			std::cout << printCalcErrorText(errCode) << '\n';
+			std::cout << getCalcErrorText(errCode) << '\n';
 			errorFlag = true;
 			result = 0;
 		} 

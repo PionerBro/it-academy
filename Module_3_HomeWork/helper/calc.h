@@ -4,5 +4,5 @@
 //возврашает результат выражения
 double calculate(const std::string& s, int* errCode = nullptr);
 
-//выводит текст ошибки
-const std::string printCalcErrorText(int code);
+//возвращает текст ошибки
+const std::string getCalcErrorText(int code);
