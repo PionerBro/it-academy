@@ -9,6 +9,7 @@ const std::vector<double> productDiscounts_{ 24.0, 24.0, 33.0, 33.0, 33.0, 0.0, 
 const double maxDiscount = 50;
 
 int main() {
+	shop::printShoppingCart(productNames_, productPrices_);
 	int cartSize = shop::inputShoppingCartSize(static_cast<int>(productNames_.size()));
 	shop::printShoppingCart(productNames_, productPrices_);
 
@@ -48,7 +49,7 @@ int main() {
 	std::vector<std::string> maxCostNames = shop::findMaxCost(purchaseNames, purchaseCosts);
 	std::string answer;
 	if (maxCostNames.size() > 1) {
-		shop::printMaxDiscount(maxCostNames);
+		shop::printMaxCosts(maxCostNames);
 		std::vector<std::string> offerNames = shop::findMinDiscountNames(maxCostNames, productNames_, productDiscounts_);
 		shop::printOffer(offerNames);
 		answer = shop::inputAnswer(maxCostNames);

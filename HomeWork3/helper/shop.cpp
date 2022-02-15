@@ -145,7 +145,7 @@ namespace shop {
 		return maxCosts;
 	}
 
-	void printMaxDiscount(const std::vector<std::string>& names) {
+	void printMaxCosts(const std::vector<std::string>& names) {
 		std::cout << "Max costs purchases: ";
 		size_t lastElement = names.size() - 1;
 		for (size_t i = 0; i < lastElement; ++i) {
